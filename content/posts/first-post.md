@@ -9,7 +9,7 @@ cover:
   image: "/images/kim.jpg"  # 封面图路径 (放在 static/images 下)
   alt: "这是封面描述"
   caption: "这是图片底部的文字-三刷才发现老金也很棒"
-  relative: false 
+  relative: true 
 ---
 
 ## 以防我忘记的使用指南
@@ -26,7 +26,6 @@ cover:
 假设你把一张叫 `tequila-sunrset.jpg` 的图片放到了 `static/images/` 文件夹里，你就这样写：
 
 ![Un Jour JE serai de retour près de Toi ](/images/tequila-sunrset.jpg)
-
 *注意：图片路径必须以 `/` 开头，代表从网站根目录开始找。*
 
 ---
