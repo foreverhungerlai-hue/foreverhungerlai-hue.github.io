@@ -1,0 +1,15 @@
+<div class="home-info">
+  {{ with .Site.Params.homeInfoParams.image }}
+  <div class="home-avatar">
+    <img src="{{ . }}" alt="avatar">
+  </div>
+  {{ end }}
+
+  {{ with .Site.Params.homeInfoParams.Title }}
+  <h1>{{ . }}</h1>
+  {{ end }}
+
+  {{ with .Site.Params.homeInfoParams.Content }}
+  <p>{{ . }}</p>
+  {{ end }}
+</div>

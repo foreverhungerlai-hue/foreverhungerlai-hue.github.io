@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blog on Tataee</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Blog on Tataee</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>http://localhost:1313/posts/first-post/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/first-post/</guid>
+      <description>&lt;h2 id=&#34;以防我忘记的使用指南&#34;&gt;以防我忘记的使用指南&lt;/h2&gt;
+&lt;p&gt;各种基本添加方法&lt;/p&gt;
+&lt;h3 id=&#34;文字内容&#34;&gt;文字内容&lt;/h3&gt;
+&lt;p&gt;直接打字。如果要&lt;strong&gt;加粗&lt;/strong&gt;，就用两个星号包起来；如果要&lt;em&gt;斜体&lt;/em&gt;，就用一个星号。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;如何在正文中插入图片&#34;&gt;如何在正文中插入图片：&lt;/h3&gt;
+&lt;p&gt;假设你把一张叫 &lt;code&gt;tequila-sunrset.jpg&lt;/code&gt; 的图片放到了 &lt;code&gt;static/images/&lt;/code&gt; 文件夹里，你就这样写：&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Un Jour JE serai de retour près de Toi &#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/tequila-sunrset.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注意：图片路径必须以 &lt;code&gt;/&lt;/code&gt; 开头，代表从网站根目录开始找。&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;还可以写代码块&#34;&gt;还可以写代码块：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;color&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;red&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

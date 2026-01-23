@@ -1,0 +1,71 @@
+/* =========================================================
+   1. 博客列表页 (List) 设置
+   保持顶部有赛博马横幅
+   ========================================================= */
+body.list .main::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 260px;
+  background: url('/images/blog-header.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================================================
+   2. 首页 (Home) 修复版设置
+   ========================================================= */
+
+/* 
+   A. 强制隐藏首页多余元素
+*/
+body:has(.profile) .home-banner,
+body:has(.profile) .main::before {
+  display: none !important;
+}
+
+/* 
+   B. 首页背景设置 (关键修改)
+   使用 !important 强制覆盖主题默认的黑色背景
+*/
+body:has(.profile) {
+  /* 请确保这里的文件名和后缀完全正确，区分大小写！ */
+  background: url('/images/blog-header.jpg') no-repeat center center fixed !important;
+  
+  /* 强制铺满全屏 */
+  background-size: cover !important;
+  
+  /* 确保高度足够 */
+  min-height: 100vh;
+}
+
+/* 
+   C. 卡片毛玻璃效果
+*/
+body:has(.profile) .profile {
+  /* 背景稍微亮一点，防止在黑色背景下看不清 */
+  background: rgba(20, 20, 20, 0.4) !important; 
+  
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  border-radius: 20px;
+  padding: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  
+  /* 垂直居中 */
+  margin-top: 8vh;
+  margin-bottom: 8vh;
+  position: relative;
+  z-index: 10;
+}
+
+/* 
+   D. 隐藏首页多余空白 
+*/
+body:has(.profile) .main > .main {
+  display: none;
+}
