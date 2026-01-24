@@ -40,21 +40,21 @@
     const root = document.getElementById('disco-root');
     if (!root) return;
 
-    // 1. 新配色表 (克莱因蓝 / 明黄 / 霓虹紫 / 荧光绿)
-    const vividColorsRGB = [
-        '0, 47, 167',    // 克莱因蓝 (Klein Blue) - 深邃
-        '255, 235, 59',  // 赛博黄 - 亮眼
-        '138, 43, 226',  // 蓝紫色 (BlueViolet) - 神秘
-        '50, 205, 50',   // 柠檬绿 (LimeGreen) - 活力
+    // 🎨 极乐迪斯科·低饱和特调版 (保持不变)
+    const subtleVibeColorsRGB = [
+        '120, 140, 170', // 阴雨灰蓝
+        '210, 195, 160', // 羊皮纸黄
+        '160, 150, 180', // 尘埃淡紫
+        '140, 165, 160', // 苦艾酒灰绿
     ];
 
-    // 2. 层级配置
+    // 层级配置 (稍微减小了内层的尺寸基数，为了对比出外层的大)
     const layerConfigs = [
-        { radiusMin: 5,  radiusMax: 20,  count: 20, sizeBase: 10, duration: 45, reverse: false, blur: 2 },
-        { radiusMin: 20, radiusMax: 45,  count: 30, sizeBase: 14, duration: 65, reverse: true,  blur: 3 },
-        { radiusMin: 45, radiusMax: 75,  count: 45, sizeBase: 18, duration: 55, reverse: false, blur: 4 },
-        { radiusMin: 75, radiusMax: 110, count: 60, sizeBase: 24, duration: 80, reverse: true,  blur: 6 },
-        { radiusMin: 110,radiusMax: 150, count: 80, sizeBase: 30, duration: 70, reverse: false, blur: 8 },
+        { radiusMin: 5,  radiusMax: 20,  count: 20, sizeBase: 8,  duration: 45, reverse: false, blur: 2 },
+        { radiusMin: 20, radiusMax: 45,  count: 30, sizeBase: 12, duration: 65, reverse: true,  blur: 3 },
+        { radiusMin: 45, radiusMax: 75,  count: 45, sizeBase: 16, duration: 55, reverse: false, blur: 4 },
+        { radiusMin: 75, radiusMax: 110, count: 60, sizeBase: 22, duration: 80, reverse: true,  blur: 6 },
+        { radiusMin: 110,radiusMax: 160, count: 80, sizeBase: 28, duration: 70, reverse: false, blur: 8 },
     ];
 
     const random = (min, max) => Math.random() * (max - min) + min;
@@ -76,29 +76,38 @@
             const left = 50 + (Math.cos(angle) * dist) / 2; 
             const top = 50 + (Math.sin(angle) * dist) / 2;
 
-            // --- 尺寸与形状 (去圆化) ---
-            const w = config.sizeBase + Math.random() * 10;
-            const normalizedDist = Math.min(dist / 140, 1);
+            // --- 核心修改区：尺寸与形状 ---
             
-            // 基础形状不再是正圆(1.0)，而是椭圆(1.5)
-            // 越往外越拉长，最大拉伸到 3.0 倍 (之前太圆是因为这里太小)
+            // 1. 计算距离系数 (0在中心, 1在边缘)
+            const normalizedDist = Math.min(dist / 150, 1);
+
+            // 2. 计算宽度 (Width) - 引入距离放大系数
+            // 边缘的光斑基础大小是中心的 2.5 倍左右
+            const baseWidth = config.sizeBase + Math.random() * 8;
+            const sizeMultiplier = 1.0 + (normalizedDist * 1.5); 
+            const w = baseWidth * sizeMultiplier;
+
+            // 3. 计算拉伸比 (Curvature) - 大幅增加边缘拉伸
+            // 中心保持 1.5倍微椭圆
+            // 边缘拉伸增加 4.0倍，总曲率可达 5.5倍 (非常细长)
             const baseElongation = 1.5; 
-            const distanceStretch = normalizedDist * 1.5; 
+            const distanceStretch = normalizedDist * 4.0; 
             const curvature = baseElongation + distanceStretch;
             
+            // 4. 计算高度 (Height)
             const h = w * curvature;
 
-            // --- 颜色与透明度 ---
-            const opacityBase = 0.9 - (normalizedDist * 0.4); // 中心实(0.9), 边缘虚(0.5)
+            // --- 颜色与透明度 (保持不变) ---
+            const opacityBase = 0.9 - (normalizedDist * 0.4);
 
-            const isColored = Math.random() > 0.75; // 25% 概率是彩色
+            const isColored = Math.random() > 0.65; 
             let colorString;
             
             if (isColored) {
-                const rgb = vividColorsRGB[Math.floor(Math.random() * vividColorsRGB.length)];
+                const rgb = subtleVibeColorsRGB[Math.floor(Math.random() * subtleVibeColorsRGB.length)];
                 colorString = `rgba(${rgb}, ${opacityBase * 0.9})`; 
             } else {
-                colorString = `rgba(255, 255, 255, ${opacityBase})`;
+                colorString = `rgba(255, 250, 235, ${opacityBase * 0.8})`;
             }
 
             // --- 样式应用 ---
@@ -107,14 +116,14 @@
             spot.style.left = left + '%';
             spot.style.top = top + '%';
             
-            // 保持中心稍微实心一点 (20%)
             spot.style.background = `radial-gradient(ellipse at 50% 50%, ${colorString} 20%, rgba(0,0,0,0) 65%)`;
             
-            // 旋转指向中心
+            // 旋转
             const rotation = (angle * 180) / Math.PI + 90;
             spot.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
             spot.style.filter = `blur(${config.blur}px)`;
             
+            // 动画
             spot.style.animation = `discoPulse ${4 + Math.random() * 3}s ease-in-out infinite alternate`;
             spot.style.animationDelay = `${Math.random() * 5}s`;
 
