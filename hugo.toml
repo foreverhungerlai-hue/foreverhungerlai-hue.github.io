@@ -50,3 +50,8 @@ theme = "PaperMod"
   name = "About"
   url = "/about/"
   weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许渲染 HTML 标签（开启颜色必点）
