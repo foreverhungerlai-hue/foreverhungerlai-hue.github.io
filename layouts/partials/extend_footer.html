@@ -1,0 +1,131 @@
+<div id="disco-root" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; overflow: hidden; user-select: none;">
+    </div>
+
+<style>
+    /* 核心动画 */
+    @keyframes discoSpin {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @keyframes discoSpinReverse {
+        from { transform: translate(-50%, -50%) rotate(360deg); }
+        to { transform: translate(-50%, -50%) rotate(0deg); }
+    }
+    @keyframes discoPulse {
+        0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(0.9); }
+        50% { opacity: 0.9; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* 容器样式 */
+    .disco-layer-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200vmax; /* 足够大以覆盖屏幕角落 */
+        height: 200vmax;
+        transform-origin: center center;
+        will-change: transform;
+    }
+    
+    .disco-spot {
+        position: absolute;
+        border-radius: 50%;
+        transform-origin: center center;
+        /* 混合模式让光看起来更通透 */
+        mix-blend-mode: screen; 
+    }
+</style>
+
+<script>
+(function() {
+    const root = document.getElementById('disco-root');
+    if (!root) return;
+
+    // 1. 梦幻配色表
+    const dreamyColors = [
+        'rgba(186, 225, 255, 0.4)', // 梦幻蓝
+        'rgba(255, 223, 211, 0.3)', // 蜜桃粉
+        'rgba(211, 255, 206, 0.3)', // 薄荷绿
+        'rgba(224, 187, 228, 0.4)', // 薰衣草紫
+    ];
+
+    // 2. 层级配置 (参数来自原文件)
+    // 半径单位是 %, 比如 120 代表屏幕宽度的 120%
+    const layerConfigs = [
+        { radiusMin: 5,  radiusMax: 20,  count: 15, sizeBase: 8,  duration: 45, reverse: false, blur: 2 },
+        { radiusMin: 20, radiusMax: 40,  count: 25, sizeBase: 12, duration: 60, reverse: true,  blur: 3 },
+        { radiusMin: 40, radiusMax: 65,  count: 40, sizeBase: 16, duration: 50, reverse: false, blur: 4 },
+        { radiusMin: 65, radiusMax: 90,  count: 55, sizeBase: 22, duration: 75, reverse: true,  blur: 6 },
+        { radiusMin: 90, radiusMax: 120, count: 70, sizeBase: 28, duration: 65, reverse: false, blur: 8 },
+        { radiusMin: 120,radiusMax: 160, count: 85, sizeBase: 35, duration: 90, reverse: true,  blur: 10 },
+    ];
+
+    // 辅助函数
+    const random = (min, max) => Math.random() * (max - min) + min;
+
+    // 3. 生成逻辑
+    layerConfigs.forEach((config, layerIdx) => {
+        // 创建层容器
+        const layerDiv = document.createElement('div');
+        layerDiv.className = 'disco-layer-container';
+        
+        // 设置层动画 (旋转)
+        const animName = config.reverse ? 'discoSpinReverse' : 'discoSpin';
+        layerDiv.style.animation = `${animName} ${config.duration}s linear infinite`;
+        
+        // 在层里撒点 (光斑)
+        for (let i = 0; i < config.count; i++) {
+            const spot = document.createElement('div');
+            spot.className = 'disco-spot';
+
+            // --- 极坐标计算位置 ---
+            const angle = Math.random() * Math.PI * 2;
+            const dist = random(config.radiusMin, config.radiusMax);
+            
+            // 转换为百分比位置 (50%是中心)
+            // 注意：这里除以2是因为容器是 200vmax，所以 50% 半径其实很大
+            // 为了保持和 React 版一致的分布，我们做一点缩放适配
+            const left = 50 + (Math.cos(angle) * dist) / 2; 
+            const top = 50 + (Math.sin(angle) * dist) / 2;
+
+            // --- 尺寸与形状 ---
+            const w = config.sizeBase + Math.random() * 8;
+            const curvature = 1.5 + Math.random() * 2.5; // 拉伸成椭圆
+            const h = w * curvature;
+
+            // --- 颜色 ---
+            // 85% 概率是白色/透明，15% 概率是梦幻色
+            const isColored = Math.random() > 0.85;
+            let color;
+            if (isColored) {
+                color = dreamyColors[Math.floor(Math.random() * dreamyColors.length)];
+            } else {
+                color = `rgba(255, 255, 255, ${0.1 + Math.random() * 0.3})`;
+            }
+
+            // --- 应用样式 ---
+            spot.style.width = w + 'px';
+            spot.style.height = h + 'px';
+            spot.style.left = left + '%';
+            spot.style.top = top + '%';
+            
+            // 径向渐变 (让光斑中心亮边缘淡)
+            spot.style.background = `radial-gradient(ellipse at center, ${color} 0%, rgba(0,0,0,0) 70%)`;
+            
+            // 旋转光斑，让它看起来是放射状排列的
+            const rotation = (angle * 180) / Math.PI + 90;
+            spot.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+            
+            spot.style.filter = `blur(${config.blur}px)`;
+            
+            // 闪烁动画
+            spot.style.animation = `discoPulse ${3 + Math.random() * 2}s ease-in-out infinite`;
+            spot.style.animationDelay = `${Math.random() * 5}s`;
+
+            layerDiv.appendChild(spot);
+        }
+
+        root.appendChild(layerDiv);
+    });
+})();
+</script>
