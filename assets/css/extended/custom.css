@@ -32,7 +32,7 @@ body:has(.profile) .main::before {
 */
 body:has(.profile) {
   /* 请确保这里的文件名和后缀完全正确，区分大小写！ */
-  background: url('/images/blog-header.jpg') no-repeat center center fixed !important;
+  background: url('/images/home-banner.jpg') no-repeat center center fixed !important;
   
   /* 强制铺满全屏 */
   background-size: cover !important;
