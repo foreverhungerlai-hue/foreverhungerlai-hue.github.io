@@ -8,7 +8,7 @@ tags:
 cover:
     image: kim.jpg      # 这里的图片名一定要和文件名一模一样（区分大小写！）
     alt: "这是封面描述"
-    caption: "这是底部的文字-三刷才发现老金那么酷"
+    caption: "这是底部的文字-三刷才发现老金那么酷-图源：折中-https://www.artstation.com/artwork/3EV6oJ"
     relative: true      # 确保这一行缩进对齐，且为 true
 ---
 
@@ -28,7 +28,7 @@ cover:
 
 假设文件夹里有一张图叫 `tequila-sunrset.jpg`，你就这样写：
 
-![Un Jour JE serai de retour près de Toi](/tequila-sunrset.jpg)
+![Un Jour JE serai de retour près de Toi（图源网络）](/tequila-sunrset.jpg)
 
 */。*
 
