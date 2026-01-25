@@ -7,7 +7,7 @@ body.list .main::before {
   display: block;
   width: 100%;
   height: 260px;
-  background: url('/images/home-banner.jpg') no-repeat center center;
+  background: url('/images/blog-header.jpg') no-repeat center center;
   background-size: cover;
   border-radius: 12px;
   margin-bottom: 40px;
