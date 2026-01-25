@@ -6,7 +6,6 @@ tags: ["运动","碎碎念"]
 cover:
     image: "pd.jpg"
     relative: true
-    hidden: true
 ---
 
 ## 在开始前
