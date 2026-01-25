@@ -10,14 +10,14 @@ cover:
     relative: true
 ---
 
-> **任务日志更新：在游荡..**
+> **我还是经常梦到在文林街游荡**
 >
 
 ---
 
 ### <span style="color: #35a7ff">LOGIC [Medium: Failure]</span>
 
-你试图分析目前的处境。
+来自昆明。
 
 **你：** “我想我迷路了。”
 
@@ -26,7 +26,7 @@ cover:
 ### <span style="color: #e83a3a">SHIVERS  [Easy: Success]</span>
 
 闭上眼睛。
-你能感觉到它们。在培养箱的微光里，成千上万株拟南芥 (*Arabidopsis*) 正在呼吸。
+你能感觉到它们。成千上万株拟南芥 (*Arabidopsis*) 正在呼吸。
 但如果你再仔细听，你会听到一种声音。
 那是一篇文章都没有发出去的寂静。
 
@@ -42,15 +42,7 @@ cover:
 
 ### <span style="color: #e83a3a">PHYSICAL INSTRUMENT  [Hard: Failure]</span>
 
-*过高心率。*
-**？：** “振作起来。”
-
-**你：** “不。”
-
-**？：** “那世界就会抛弃你，你会被落在后面。”
-
->“你父母给你的所有礼物，你朋友所有的爱和耐心，你都淹没在神经毒素里。你让痛苦赢了。它会一直赢下去，直到你死去——或者克服它。”
-
+>我们应该重新回到跑道和健身房。
 ---
 
 ### <span style="color: #a358df">INLAND EMPIRE  [Legendary: Success]</span>
@@ -62,6 +54,6 @@ cover:
 
 ---
 
-### <span style="color: #a358df">ESPRIT DE CORPS (同舟共济) [Medium: Success]</span>
+### <span style="color: #a358df">ESPRIT DE CORPS  [Medium: Success]</span>
 
 谢谢你来。
