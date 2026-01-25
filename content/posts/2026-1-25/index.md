@@ -5,20 +5,23 @@ date: 2026-01-25T20:00:00+08:00
 tags: ["运动","碎碎念"] 
 cover:
     image: "pd.jpg"
-    relative: true 
+    relative: true
+    hidden: true
 ---
 
 ## 在开始前
 
 *这是一个关于一次跑步和跑步时我在想什么碎碎念，我记录自己脑子里的碎片，一个念头冒出来不需要什么理由，并且可能彼此没有逻辑上的联系，而我跑步的一大乐趣就是让思维乱发散。你可以把它们当作不同的独立小故事。*
 
-<img src="zxdw.jpg" width="300" alt="zxdw" style="display: block; margin: 20px auto;" />
+<img src="zxdw.jpg" width="200" alt="zxdw" style="display: block; margin: 20px auto;" />
 
 > **人或许就是各自过去的坍缩，少一块记忆，就无法唤起那一刻的感受。**
 
-我已经两个月没有好好跑步了。近两周陷入一种奇怪的成长节点一样的停滞，当然这只是直觉。百思平吃完吃Eve，Eve吃完吃维B，再吞半勺氮泵，也挪不动。直到今晚，天气暖和得不像杭州，一个念头就出发了。
+我已经两个月没有好好跑步了。近两周陷入一种奇怪的成长节点一样的停滞，当然这只是直觉。百思平吃完吃Eve，Eve吃完吃维B，再吞半勺氮泵，也挪不动。直到今晚，天气暖和得不像杭州，一个念头就出发。
 
-<img src="st.jpg" width="300" alt="st" align="right" style="margin: 0 0 10px 15px;" />
+## 去跑吧
+
+<img src="st.jpg" width="200" alt="st" align="right" style="margin: 0 0 10px 15px;" />
 路过水塘时风吹在脸上，会想起来在普吉夜跑。海边树林里隐约有年轻的笑声，宿舍楼下像是另一个海滨。
 
 那天前任突然发微信，这几年总是春节前后这段时间找我，好像只要不再见面，我永远是他记忆里十七岁的影子。
