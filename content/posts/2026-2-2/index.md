@@ -59,7 +59,7 @@ cover:
 
 ### 结语
 
-说了那么多废话，来做个眼读测试吧，算是今天的意外收获。
+说了那么多废话，来做个眼读测试吧，算是今天的意外收获，理照片的时候注意到的。
 
 <img src="yj.jpg" width="200" alt="眼神测试" style="display: block; margin: 20px auto;" />
 
