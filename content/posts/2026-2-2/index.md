@@ -2,7 +2,8 @@
 
 title: 眼读测试（RMET）
 
-cover: cover.jpg
+cover::
+image:"cover.jpg"
 
 ---
 
