@@ -7,6 +7,9 @@ cover:
     relative: true
 
 ---
+#### <span style="color: #e83a3a">警告：建议丢给ai，我们都知道文献逻辑清晰，但我们喜欢用ai看文献。</span>
+
+
 # 一种内化自我欺骗机制下的认知认识论危机与生理真实性校验模型
 
 **Title:** Epistemic Insecurity under Internalized Self-Deception: A Calibration Model for Cognitive and Physiological Authenticity
