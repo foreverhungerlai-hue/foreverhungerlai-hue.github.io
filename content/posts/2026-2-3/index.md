@@ -1,7 +1,7 @@
 ---
 title: "真实的尾巴"
 date: 2026-02-02T02:35:00+08:00
-tags: ["迷思","伪科学"]
+tags: ["迷思","伪科学","行为艺术","抽象"]
 cover:
     image: "cover.png"
     relative: true
