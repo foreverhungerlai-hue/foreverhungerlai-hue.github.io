@@ -69,7 +69,7 @@ cover:
 **Figure 1. Integrated conceptual framework and simulation-based validation of a behavioral process model.** The behavioral process model conceptualizes action generation as a three-stage pathway: Purpose (initial, non-falsifiable drive), Cognition (interpretative processing and potential cognitive packaging), and Output (verifiable linguistic, physiological, and behavioral expressions). A simulated “intimate relationship interaction” scenario is mapped onto the framework to examine explanatory robustness. Multiple latent purpose variables (P1–P4) are tested against observable outputs and subjected to structured reverse-validation analysis.
 
 ### 3.2 真实性逆向校验分析
-基于七项指标对案例进行分析：
+基于六项指标对案例进行分析：
 
 #### 3.2.1 逻辑互斥性检验
 假设任意目的（P1 至 P4），逻辑链条均能自洽。假设目的均显著（p < 0.001）成立且合理。
