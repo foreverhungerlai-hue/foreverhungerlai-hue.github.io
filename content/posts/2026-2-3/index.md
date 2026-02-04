@@ -34,7 +34,7 @@ cover:
 
 ## 2. 理论模型 (Theoretical Framework)
 
-为量化分析真实性判断过程，本文构建了包含“流程”与“检查”两个维度的抽象模型（模型一）[figure1-a]。
+为量化分析真实性判断过程，本文构建了包含“流程”与“检查”两个维度的抽象模型（模型一）[figure1]。
 
 ### 2.1 抽象模型：流程 (Process)
 行为的发生被解构为以下路径：
@@ -47,7 +47,7 @@ cover:
 
 ## 3. 案例模拟与分析 (Simulation and Analysis)
 
-为验证上述模型，本文引入一个“亲密关系互动”场景作为模拟示例[figure1-b]。
+为验证上述模型，本文引入一个“亲密关系互动”场景作为模拟示例[figure1]。
 
 ### 3.1 实验条件设定
 *   **潜在目的变量：**
@@ -61,7 +61,9 @@ cover:
     *   *生理：* 多巴胺/催产素分泌增加、心率（HR）上升、体温升高、趋近行为。
     *   *行为：* 拥抱、注视、性行为。
 
-![**Figure 1. Integrated conceptual framework and simulation-based validation of a behavioral process model.** (a) The behavioral process model conceptualizes action generation as a three-stage pathway: Purpose (initial, non-falsifiable drive), Cognition (interpretative processing and potential cognitive packaging), and Output (verifiable linguistic, physiological, and behavioral expressions). (b) A simulated “intimate relationship interaction” scenario is mapped onto the framework to examine explanatory robustness. Multiple latent purpose variables (P1–P4) are tested against observable outputs and subjected to structured reverse-validation analysis.](/t.jpg)
+![](/t.jpg)
+
+**Figure 1. Integrated conceptual framework and simulation-based validation of a behavioral process model.** The behavioral process model conceptualizes action generation as a three-stage pathway: Purpose (initial, non-falsifiable drive), Cognition (interpretative processing and potential cognitive packaging), and Output (verifiable linguistic, physiological, and behavioral expressions). A simulated “intimate relationship interaction” scenario is mapped onto the framework to examine explanatory robustness. Multiple latent purpose variables (P1–P4) are tested against observable outputs and subjected to structured reverse-validation analysis.
 
 ### 3.2 真实性逆向校验分析
 基于七项指标对案例进行分析：
@@ -133,6 +135,6 @@ cover:
 
 [6] Wybzd (我也不知道, 大概是常识吧). (2003). *Emotions revealed: Recognizing faces and feelings to improve communication and emotional life*. Times Books.
 
-[7] 詹姆斯·卡梅隆 (导演). (2009–2025). *阿凡达 (Avatar)* [系列电影]. 20世纪影业 (20th Century Studios).
+[7] 詹姆斯·卡梅隆 (导演). (2009–2025). 阿凡达 (Avatar) [系列电影]. 20世纪影业 (20th Century Studios).
 ---
 
