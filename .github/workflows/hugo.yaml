@@ -59,7 +59,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            ----baseURL "https://tataeeanxoy.top/"
+            --baseURL "https://tataeeanxoy.top/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
