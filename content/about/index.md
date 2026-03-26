@@ -33,10 +33,6 @@ cover:
 
 > **“妈妈，救命，我脖子上长了个头，而且我在里面。”**
 
-<div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
-    <img src="nnj.jpg" alt="拟南芥" style="width: 40%; height: auto; border-radius: 8px;">
-    <img src="ys.jpg" alt="杨树" style="width: 40%; height: auto; border-radius: 8px;">
-</div>
 
 ---
 
