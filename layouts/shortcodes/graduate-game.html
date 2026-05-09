@@ -1,0 +1,7 @@
+{{- $id := .Get "id" | default "graduate-game" -}}
+<link rel="stylesheet" href="{{ "assets/graduate-game.css" | relURL }}">
+<div id="{{ $id }}"></div>
+<script src="{{ "assets/graduate-game.umd.js" | relURL }}"></script>
+<script>
+  window.mountGraduateGame('#{{ $id }}')
+</script>
