@@ -1,6 +1,6 @@
 baseURL = "https://tataeeanxoy.top/"
-languageCode = "zh-cn"
-title = "文献阅读笔记"
+languageCode = "en-us"
+title = "Tataee"
 theme = "PaperMod"
 
 [taxonomies]
@@ -14,30 +14,44 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
-  mainSections = ["papers"]
+[params.assets]
+  customCSS = ["css/extended/custom.css"]
+
+  mainSections = ["posts"]
+
+  [[params.socialIcons]]
+    name = "instagram"
+    url = "https://instagram.com/365ailier"
+
+  [[params.socialIcons]]
+    name = "mastodon"
+    url = "https://alive.bar/@Tatachibubao"
 
   [params.profileMode]
     enabled = true
-    title = "文献阅读笔记"
-    subtitle = "整理正在读、已经读过、值得回看的论文。"
-    imageUrl = ""
+    title = "Tataee"
+    subtitle = "纯碎碎念 | 今天动了吗？ | Research"
+    imageUrl = "/images/avatar.jpg"
+    imageWidth = 150
+    imageHeight = 150
+    imageTitle = "avatar"
 
 [[menu.main]]
-  name = "文献"
-  url = "/papers/"
+  name = "Blog"
+  url = "/posts/"
   weight = 1
 
 [[menu.main]]
-  name = "标签"
+  name = "Tags"
   url = "/tags/"
   weight = 2
 
 [[menu.main]]
-  name = "关于"
+  name = "About"
   url = "/about/"
   weight = 3
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+      unsafe = true  # 允许渲染 HTML 标签（开启颜色必点）
