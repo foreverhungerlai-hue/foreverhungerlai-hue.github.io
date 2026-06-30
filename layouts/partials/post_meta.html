@@ -1,0 +1,34 @@
+{{- $scratch := newScratch }}
+
+{{- if not .Date.IsZero -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+{{- $plain := .Plain | plainify -}}
+{{- $cjkText := replaceRE "[^\\p{Han}\\p{Hiragana}\\p{Katakana}\\p{Hangul}]" "" $plain -}}
+{{- $latinText := replaceRE "[\\p{Han}\\p{Hiragana}\\p{Katakana}\\p{Hangul}]" " " $plain -}}
+{{- $cjkChars := strings.RuneCount $cjkText -}}
+{{- $latinWords := len (findRE "\\S+" $latinText) -}}
+{{- $cjkMinutes := div (add $cjkChars 499) 500 -}}
+{{- $latinMinutes := div (add $latinWords 199) 200 -}}
+{{- $readingTime := add $cjkMinutes $latinMinutes -}}
+{{- if lt $readingTime 1 -}}
+{{- $readingTime = 1 -}}
+{{- end -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" $readingTime | default (printf "%d min" $readingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+{{- with (partial "author.html" .) }}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+{{- end }}
+{{- end }}
+
+{{- with ($scratch.Get "meta") }}
+{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
