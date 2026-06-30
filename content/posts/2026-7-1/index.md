@@ -10,6 +10,31 @@ cover:
     relative: true
 ---
 
+<style>
+.entry-cover img {
+  width: 50%;
+  max-width: 50%;
+}
+
+.post-content img.float-right-half {
+  float: right;
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  margin: 0.25rem 0 1rem 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .entry-cover img,
+  .post-content img.float-right-half {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+}
+</style>
+
 ## 前言
 
 
@@ -89,13 +114,13 @@ cover:
 
 回家以后爹心情激动的展示了天天来睡觉的大猫，并且严厉制止我开门摸猫，大猫看到我就一脸警觉和怨气，我是生人啊。
 
-![猫猫](3.jpg)
+<img src="3.jpg" alt="猫猫" class="float-right-half">
 
 早年黑长直时期，也是这样一脸好奇的在翠湖梦游。
 
-![我](4.jpg)
+<img src="4.jpg" alt="我" class="float-right-half">
 
-
+<div style="clear: both;"></div>
 
 
 
