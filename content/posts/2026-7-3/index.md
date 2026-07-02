@@ -3,8 +3,7 @@ title: "神一样的Prompt和三堂会审恐惧"
 date: 2026-07-03
 draft: false
 tags:
-  - 碎碎念
-  - AI
+  - 迷思
 cover:
   image: cover.jpg
   relative: true
