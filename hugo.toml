@@ -1,6 +1,7 @@
 baseURL = "https://tataeeanxoy.top/"
 languageCode = "en-us"
 title = "Tataee"
+timeZone = "Asia/Shanghai"
 theme = "PaperMod"
 
 [taxonomies]
