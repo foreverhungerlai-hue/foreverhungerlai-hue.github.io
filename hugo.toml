@@ -48,11 +48,6 @@ theme = "PaperMod"
   url = "/technical/"
   weight = 1
 
-[[menu.main]]
-  name = "Protocols"
-  url = "/tags/protocol/"
-  weight = 2
-
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
