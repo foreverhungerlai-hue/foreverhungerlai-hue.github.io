@@ -27,6 +27,8 @@ The kit physically removes genomic DNA with a dedicated DNA filter before RNA is
 
 > **Version note:** This article follows product manual **PIN-BR07009-003**, valid from October 31, 2025. Always compare a working protocol with the latest manufacturer documentation before using a new kit lot.
 
+{{< figure src="genuptm-total-rna-kit-overview.png" alt="GenUP Total RNA Kit product page showing the kit, key features, applications, and ordering information." caption="GenUP™ Total RNA Kit product overview from biotechrabbit." >}}
+
 ## At a Glance
 
 | Parameter | Specification |
