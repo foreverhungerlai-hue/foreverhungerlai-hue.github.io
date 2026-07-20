@@ -362,6 +362,47 @@ body:has(.personal-portal) .top-link {
   bottom: 5.4rem;
 }
 
+.technical-return {
+  position: fixed;
+  left: 1.35rem;
+  bottom: 1.35rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.58rem 0.82rem 0.58rem 0.58rem;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(20, 20, 20, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.technical-return:hover {
+  color: #fff;
+  background: rgba(15, 118, 110, 0.88);
+  border-color: rgba(153, 246, 228, 0.6);
+  transform: translateY(-3px);
+}
+
+.return-glyph {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #173936;
+  background: linear-gradient(135deg, #d9f99d, #86efac);
+  border-radius: 50%;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
 [data-theme="dark"] body:has(.tech-home),
 [data-theme="dark"] body:has(.technical-intro),
 [data-theme="dark"] body:has(.technical-article-marker) {
@@ -424,11 +465,17 @@ body:has(.personal-portal) .top-link {
     right: 0.9rem;
     bottom: 0.9rem;
   }
+
+  .technical-return {
+    left: 0.9rem;
+    bottom: 0.9rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .tech-primary-link,
   .personal-portal,
+  .technical-return,
   body:has(.tech-home) .post-entry,
   body:has(.technical-intro) .post-entry {
     transition: none;

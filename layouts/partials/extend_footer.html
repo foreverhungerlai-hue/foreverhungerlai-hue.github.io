@@ -10,6 +10,10 @@
     <span class="portal-label">Personal journal</span>
 </a>
 {{- else -}}
+<a class="technical-return" href="{{ "/" | relURL }}" aria-label="Back to Lab Notes" title="Back to Lab Notes">
+    <span class="return-glyph" aria-hidden="true">↗</span>
+    <span>Back to Lab Notes</span>
+</a>
 {{ if not .IsPage }}
 <div id="disco-root" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; overflow: hidden; user-select: none;"></div>
 

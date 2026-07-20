@@ -29,7 +29,7 @@ theme = "PaperMod"
 
   [params.profileMode]
     enabled = false
-    title = "Tataee / Technical Notes"
+    title = "Tataee / Lab Notes"
     subtitle = "Methods, experiments, and reproducible research notes."
     imageUrl = "/images/avatar.jpg"
     imageWidth = 150
@@ -37,14 +37,14 @@ theme = "PaperMod"
     imageTitle = "avatar"
 
   [params.homeInfoParams]
-    Title = "Technical Field Notes"
+    Title = "Lab Note Archive"
     Content = "Practical protocols, experimental decisions, and research notes from a plant molecular biology bench. Written to be used, checked, and improved."
 
   [params.label]
     text = "Tataee / Lab Notes"
 
 [[menu.main]]
-  name = "Technical Notes"
+  name = "Lab Notes"
   url = "/technical/"
   weight = 1
 

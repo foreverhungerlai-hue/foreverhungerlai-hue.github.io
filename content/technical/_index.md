@@ -1,5 +1,5 @@
 ---
-title: "Technical Notes"
+title: "Lab Notes"
 description: "Bench-ready methods, experimental reasoning, and reproducible research notes."
 draft: false
 technicalPage: true
