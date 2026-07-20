@@ -1,5 +1,5 @@
 baseURL = "https://tataeeanxoy.top/"
-languageCode = "en-us"
+locale = "en-US"
 title = "Tataee"
 timeZone = "Asia/Shanghai"
 theme = "PaperMod"
@@ -15,10 +15,9 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  mainSections = ["technical"]
 [params.assets]
   customCSS = ["css/extended/custom.css"]
-
-  mainSections = ["posts"]
 
   [[params.socialIcons]]
     name = "instagram"
@@ -29,30 +28,32 @@ theme = "PaperMod"
     url = "https://alive.bar/@Tatachibubao"
 
   [params.profileMode]
-    enabled = true
-    title = "Tataee"
-    subtitle = "纯碎碎念 | 今天动了吗？ | Research"
+    enabled = false
+    title = "Tataee / Technical Notes"
+    subtitle = "Methods, experiments, and reproducible research notes."
     imageUrl = "/images/avatar.jpg"
     imageWidth = 150
     imageHeight = 150
     imageTitle = "avatar"
 
+  [params.homeInfoParams]
+    Title = "Technical Field Notes"
+    Content = "Practical protocols, experimental decisions, and research notes from a plant molecular biology bench. Written to be used, checked, and improved."
+
+  [params.label]
+    text = "Tataee / Lab Notes"
+
 [[menu.main]]
-  name = "Blog"
-  url = "/posts/"
+  name = "Technical Notes"
+  url = "/technical/"
   weight = 1
 
 [[menu.main]]
-  name = "Tags"
-  url = "/tags/"
+  name = "Protocols"
+  url = "/tags/protocol/"
   weight = 2
-
-[[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 3
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true  # 允许渲染 HTML 标签（开启颜色必点）
+      unsafe = true

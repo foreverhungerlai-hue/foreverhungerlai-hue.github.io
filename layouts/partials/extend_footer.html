@@ -1,3 +1,15 @@
+{{- $isTechnical := or .IsHome (hasPrefix .RelPermalink "/technical/") -}}
+{{- $isTechnicalTerm := false -}}
+{{- if eq .Kind "term" -}}
+    {{- $technicalTermPages := where .Pages "Params.technicalPage" true -}}
+    {{- $isTechnicalTerm = gt (len $technicalTermPages) 0 -}}
+{{- end -}}
+{{- if or $isTechnical $isTechnicalTerm -}}
+<a class="personal-portal" href="{{ "/posts/" | relURL }}" aria-label="Enter the personal journal" title="Enter the personal journal">
+    <span class="portal-door" aria-hidden="true"><span class="portal-knob"></span></span>
+    <span class="portal-label">Personal journal</span>
+</a>
+{{- else -}}
 {{ if not .IsPage }}
 <div id="disco-root" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; overflow: hidden; user-select: none;"></div>
 
@@ -282,3 +294,4 @@
 })();
 </script>
 {{ end }}
+{{- end -}}

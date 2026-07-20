@@ -1,4 +1,5 @@
-<div class="home-info">
+<section class="home-info tech-home" aria-labelledby="technical-home-title">
+  <p class="tech-kicker">RESEARCH NOTEBOOK · METHODS / DATA / FIELDWORK</p>
   {{ with .Site.Params.homeInfoParams.image }}
   <div class="home-avatar">
     <img src="{{ . }}" alt="avatar">
@@ -6,10 +7,15 @@
   {{ end }}
 
   {{ with .Site.Params.homeInfoParams.Title }}
-  <h1>{{ . }}</h1>
+  <h1 id="technical-home-title">{{ . }}</h1>
   {{ end }}
 
   {{ with .Site.Params.homeInfoParams.Content }}
   <p>{{ . }}</p>
   {{ end }}
-</div>
+
+  <div class="tech-home-actions">
+    <a class="tech-primary-link" href="{{ "/technical/" | relURL }}">Browse all notes <span aria-hidden="true">→</span></a>
+    <span class="tech-home-status"><span aria-hidden="true"></span> Open notebook</span>
+  </div>
+</section>
