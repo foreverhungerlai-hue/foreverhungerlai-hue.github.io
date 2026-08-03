@@ -13,7 +13,17 @@ cover:
 
 《乌暗瞑》——是在哪里看到的？真是好美的词。又想到 *sunset*。有一天下班等在十字路口，身边的人说：“Look here, today’s sunset is beautiful.”
 
-{{< youtube IU1ebBrNs3c >}}
+<a href="https://youtu.be/IU1ebBrNs3c?si=cKJlX3uJE-3E9d2M"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="在 YouTube 收听 Sapientdream 的 Past Lives"
+   style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem 1.2rem;border:1px solid var(--border);border-radius:12px;text-decoration:none;">
+  <span aria-hidden="true" style="font-size:2rem;line-height:1;">▶</span>
+  <span>
+    <strong>Sapientdream — Past Lives</strong><br>
+    <small>在 YouTube 收听 ↗</small>
+  </span>
+</a>
 
 突然就拥有了想要的一切，免不了日日怀疑：这会不会只是夏天一个睡不醒的午后，晃晃悠悠荡过去的梦。可你的舌头动了一下，仍找不出一个词来形容此刻蓝紫色的山影、燃烧的云。7-Eleven 的灯牌高高立起，摩托车引擎嗡嗡作响，手心的触感发热，头发还没有完全干。
 
@@ -73,7 +83,7 @@ cover:
 
 从世界各地跨越时间重新回到身边的朋友。
 
-还有三块屏幕和一张升降书桌，3D 打印机，草莓味乳清，联邦网络周边卫衣，一把屁股分区可动的人体工学椅，一盒一千片的 BKK 拼图；读不完的书，以及享受每一次运动的身体，fiter and fiter。
+还有三块屏幕和一张升降书桌，3D 打印机，草莓味乳清，联邦网络周边卫衣，一把屁股分区可动的人体工学椅，一盒一千片的 BKK 拼图；读不完的书，以及享受每一次运动的身体，fitter and fitter。
 
 有猫。*So soft. Oh, Biscuit.*
 
