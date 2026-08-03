@@ -7,6 +7,384 @@ cover:
   relative: true
 ---
 
+{{< bilingual-switch icon="biscuit-pixel.png" zh-minutes="6" en-minutes="7" >}}
+
+I am sitting on the rug.
+
+The air conditioner is a little too cold. Half a cup of yogurt. My back against the sofa. Outside the window, giant tropical leaves.
+
+Another evening.
+
+A thousand evenings folded into this one.
+
+*U-ám-mê.*
+
+Where did I first come across that phrase? Such beautiful words.
+
+I think of *sunset*, too.
+
+One day after work, we were waiting at a traffic light when someone beside me suddenly said,
+
+“Look here. Today’s sunset is beautiful.”
+
+<a href="https://youtu.be/IU1ebBrNs3c?si=cKJlX3uJE-3E9d2M"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Listen to Sapientdream's Past Lives on YouTube"
+   style="display:flex;align-items:center;gap:1rem;margin:1.5rem 0;padding:1rem 1.2rem;border:1px solid var(--border);border-radius:12px;text-decoration:none;">
+  <span aria-hidden="true" style="font-size:2rem;line-height:1;">▶</span>
+  <span>
+    <strong>Sapientdream — Past Lives</strong><br>
+    <small>Listen on YouTube ↗</small>
+  </span>
+</a>
+
+Somehow, all at once, I have everything I ever wanted.
+
+Which is exactly why I keep wondering whether this is only a summer afternoon that refuses to wake up—a dream drifting lazily through the heat.
+
+Your tongue moves, yet still no word feels large enough for the blue-violet silhouette of the mountains, for the clouds burning themselves into dusk.
+
+The 7-Eleven sign stands high above the road.
+
+Motorcycles hum.
+
+Your palms are still warm.
+
+Your hair has not quite dried.
+
+On the way to the greenhouse, you pass a group of university students singing and dancing.
+
+The drums taste faintly of fish sauce and tropical islands.
+
+Girls circle a boy who keeps leaping into the air, chanting something in rhythm.
+
+Their voices dissolve behind you.
+
+Tamarind pods crack beneath your shoes.
+
+The brittle sensation travels through the foam of your ASICS, tapping gently against the soles of your feet.
+
+You look down at scattered shadows of leaves.
+
+What’s “小孔成像” in English?
+
+*Pinhole imaging.*
+
+The answer arrives before the thought has fully formed.
+
+I’ve changed the way I learn vocabulary.
+
+Instead of memorising word lists, I collect words from life.
+
+One from face-to-face conversations.
+
+One from papers.
+
+One from text messages.
+
+One from the internet.
+
+One from literature.
+
+Five words make a day.
+
+I send them to ChatGPT, ask about their meanings, their texture, how people actually use them.
+
+Then I turn them into Anki cards.
+
+Sometimes I note where they came from.
+
+Sometimes I simply keep a screenshot.
+
+Little by little, I add new words while old ones quietly return.
+
+After a while they stop sounding borrowed.
+
+They begin to sound like mine.
+
+Crunch.
+
+Crack.
+
+I’ve been watching so many films lately.
+
+Reading even more books.
+
+Every day there is now a stretch of time reserved for doing absolutely nothing.
+
+Curled up on the sofa.
+
+A book.
+
+An iced latte.
+
+Or an iced Americano.
+
+An independent film enthusiast.
+
+Someone who insists on finishing one book every week.
+
+I like that version of myself.
+
+This afternoon I should probably go to the gym.
+
+And buy tickets for *Spider-Man*.
+
+We were talking about which Spider-Man we grew up with.
+
+Apparently Hulk is the most popular shirt these days.
+
+Maybe today I’ll wear *Guardians of the Galaxy* instead.
+
+Tomorrow I have RNA extraction.
+
+Tomorrow isn’t a cinema day.
+
+The day before yesterday we were wondering whether people here simply don’t hold hands or kiss in public.
+
+The cinema, thankfully, provides little sofa seats.
+
+A yellow dog wearing an Elizabethan collar turns around to look at you.
+
+In the mirror, you catch your own reflection.
+
+Among all the young students around you, what feels different is your pale legs, muscles quietly appearing and disappearing beneath the movement of walking.
+
+How on earth did *naturally* and *actively* become words I actually use?
+
+I’m almost flattered.
+
+The price of watering plants in the greenhouse is a pair of mosquito-bitten legs.
+
+Luckily there’s a Japanese ointment that works beautifully.
+
+Cool against the skin.
+
+The coolness lingers for a moment before another tropical evening settles over it.
+
+The only unpleasant thing recently was the diarrhoea.
+
+Fortunately, my English teacher—the cheerful little chubby one with the smile of an angel—recommended yogurt.
+
+I’ve finally understood why teachers and doctors should always have smiles like that.
+
+They come with their own halo.
+
+Imagine Robert Downey Jr.’s eyes on Timothée Chalamet’s face.
+
+He smiles at you and says,
+
+“You need some probiotics.”
+
+Problem solved.
+
+Then films again.
+
+The first one must have been *Lost in Translation*.
+
+My fourth time watching it.
+
+Probably the first time for a Southeast Asian cat with half a tail.
+
+She kept jumping at Tokyo’s neon lights.
+
+There is a loneliness you have never truly experienced, yet somehow already understand.
+
+You roll it around in your hands.
+
+Earlier today you joked about Yu Dafu disappearing somewhere in Southeast Asia before his death.
+
+Then you think of someone far away.
+
+Your route crossed mine once.
+
+You led me back to the last barbecue we had beside the old National Southwest Associated University campus.
+
+The place is called MALA now.
+
+We lay beneath the magnolia trees, talking about all the places we would someday go.
+
+Great-grandfather.
+
+That afternoon beneath the magnolia tree, you told me,
+
+“Stop being so hopelessly romantic.”
+
+“Once I transfer into the international programme, you’re definitely going to get yourself into trouble.”
+
+One of our classmates—the former playboy—became the first among us to marry this morning.
+
+By some miracle, I wasn’t the first.
+
+Mother still asks,
+
+“At your age, why aren’t you married?”
+
+I mumble something about master’s degrees, PhDs, poisonous laboratory chemicals.
+
+None of it really answers the question.
+
+Looking back now,
+
+you were right.
+
+Every single time.
+
+Only today have I finally admitted something to myself.
+
+That wish I carried through adolescence—
+
+to become someone popular—
+
+had already come true.
+
+I just never noticed when.
+
+No one announced it.
+
+Only our adolescence itself
+
+will never meet us again.
+
+I don’t dislike marriage.
+
+It’s just that when I think about why I started a PhD,
+
+escaping marriage somehow sits alongside becoming a fifty-year-old postdoc wandering the world,
+
+making one life-changing piece of work and retiring early,
+
+or learning programming as quickly as possible and finding someone else’s shoulders to lean on.
+
+Too many futures are trying to exist at once.
+
+After the film, I wanted to recommend *Past Lives* to him.
+
+What was I thinking?
+
+Who asks someone they’re dating to watch *Past Lives* together?
+
+My brain must have been broken.
+
+Past lives really do become past lives.
+
+Looking back now,
+
+they feel like another film.
+
+Someone else’s story.
+
+The sunsets over Cuihu Lake.
+
+The seagulls.
+
+Cold rain over West Lake.
+
+Ten million extravagant dreams.
+
+Ten million unbearable hurts.
+
+All of them disappeared here.
+
+Without a sound.
+
+Like tamarind shells cracking beneath shoes somewhere very far away.
+
+Every wish I ever made came true.
+
+The highest degree I once dreamed of.
+
+My mother’s approval—
+
+mostly because of my English,
+
+and because my relationships have slowly become transparent enough for her to understand.
+
+“How are you going to introduce yourself to my mum?
+
+She’ll definitely ask what you do.
+
+She’ll never understand digital nomads.”
+
+“Just say *engineer*.”
+
+May my sister’s spirit watch over us.
+
+Otherwise I’ll probably have to sit through what may become the worst HR interview in a foreign language that I’ll ever witness.
+
+Or perhaps I’ll simply have to improve my English enough to rescue the conversation.
+
+It feels almost impossible.
+
+Beautiful evenings.
+
+An endless tropical youth.
+
+Friends returning across time and continents.
+
+Books I’ll never finish.
+
+A body growing *fitter and fitter*.
+
+Somewhere along the way,
+
+everything I wanted as a child quietly moved into the same room.
+
+There is a cat.
+
+So soft.
+
+Oh, Biscuit.
+
+This afternoon he asked whether this blog was about Biscuit.
+
+“No,” I said.
+
+“It’s just me rambling.”
+
+I remembered wanting to become a scientist as a child.
+
+Later I always thought mathematicians were the real scientists.
+
+Life science didn’t quite count.
+
+And yet here I am—
+
+a *weed researcher*.
+
+It makes me happy.
+
+I know I’m reasonably smart.
+
+I’m still good at moving my body.
+
+That feels enough.
+
+Outside, it has grown a little darker.
+
+The tropical leaves remain beyond the air-conditioned room,
+
+holding one evening after another.
+
+The last time I spoke Chinese,
+
+it was because a motorcycle taxi driver had been learning Mandarin on Duolingo.
+
+He tried a few hesitant sentences.
+
+I answered without thinking.
+
+Only then did I realise my Chinese had somehow begun to sound a little like my grandfather’s.
+
+Perhaps from now on,
+
+people will mistake me for someone from a tropical Chinese-speaking place.
+
+What ancestry did that DNA report say I had, anyway?
+
+{{< /bilingual-switch >}}
+
 坐在地毯上。空调吹得有一点冷，酸奶喝到一半，背靠着沙发。窗外是叶片巨大的热带植物。又一个黄昏。
 
 千万个黄昏叠在这个瞬间。

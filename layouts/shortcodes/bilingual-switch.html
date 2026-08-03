@@ -1,0 +1,194 @@
+{{- $id := printf "bilingual-%d" .Ordinal -}}
+{{- $icon := .Get "icon" | default "biscuit-pixel.png" -}}
+{{- $zhMinutes := .Get "zh-minutes" | default "6" -}}
+{{- $enMinutes := .Get "en-minutes" | default "7" -}}
+{{- $iconURL := printf "%s%s" .Page.RelPermalink $icon -}}
+{{- with .Page.Resources.GetMatch $icon -}}
+  {{- $iconURL = .RelPermalink -}}
+{{- end -}}
+
+<div id="{{ $id }}" class="bilingual-article" data-bilingual-root>
+  <div class="bilingual-toolbar">
+    <button
+      class="bilingual-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-controls="{{ $id }}-english"
+      aria-label="Switch to English"
+      title="Switch to English"
+    >
+      <img
+        class="bilingual-toggle__cat"
+        src="{{ $iconURL }}"
+        width="48"
+        height="48"
+        alt=""
+        aria-hidden="true"
+      >
+      <span class="bilingual-toggle__label">English</span>
+      <span class="bilingual-toggle__arrow" aria-hidden="true">↔</span>
+    </button>
+  </div>
+
+  <section
+    id="{{ $id }}-english"
+    class="bilingual-english"
+    lang="en"
+    aria-label="English version"
+    hidden
+  >
+    {{- .Inner | .Page.RenderString (dict "display" "block") -}}
+  </section>
+
+  <style>
+    #{{ $id }} .bilingual-toolbar {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 0 1.75rem;
+    }
+
+    #{{ $id }} .bilingual-toggle {
+      display: none;
+      align-items: center;
+      gap: 0.58rem;
+      min-height: 52px;
+      padding: 3px 0.78rem 3px 3px;
+      color: var(--primary);
+      background: var(--entry);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(38, 30, 20, 0.09);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 650;
+      letter-spacing: 0.015em;
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    #{{ $id }}[data-ready="true"] .bilingual-toggle {
+      display: inline-flex;
+    }
+
+    #{{ $id }} .bilingual-toggle:hover {
+      border-color: rgba(178, 128, 78, 0.55);
+      box-shadow: 0 10px 26px rgba(38, 30, 20, 0.14);
+      transform: translateY(-2px);
+    }
+
+    #{{ $id }} .bilingual-toggle:focus-visible {
+      outline: 3px solid rgba(178, 128, 78, 0.35);
+      outline-offset: 3px;
+    }
+
+    #{{ $id }} .bilingual-toggle__cat {
+      display: block;
+      width: 44px;
+      height: 44px;
+      margin: 0;
+      background: #faf2de;
+      border: 1px solid rgba(118, 84, 52, 0.22);
+      border-radius: 50%;
+      image-rendering: pixelated;
+      object-fit: cover;
+    }
+
+    #{{ $id }} .bilingual-toggle__arrow {
+      color: var(--secondary);
+      font-size: 0.8rem;
+    }
+
+    #{{ $id }} .bilingual-english[hidden] {
+      display: none !important;
+    }
+
+    #{{ $id }} .bilingual-english {
+      animation: bilingual-fade-in 220ms ease-out;
+    }
+
+    #{{ $id }} .bilingual-english > :first-child {
+      margin-top: 0;
+    }
+
+    @keyframes bilingual-fade-in {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 680px) {
+      #{{ $id }} .bilingual-toolbar {
+        justify-content: flex-start;
+        margin-bottom: 1.4rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #{{ $id }} .bilingual-toggle {
+        transition: none;
+      }
+
+      #{{ $id }} .bilingual-english {
+        animation: none;
+      }
+    }
+  </style>
+
+  <script>
+    (() => {
+      const init = () => {
+        const root = document.getElementById('{{ $id }}');
+        if (!root || root.dataset.ready === 'true') return;
+
+        const button = root.querySelector('.bilingual-toggle');
+        const label = root.querySelector('.bilingual-toggle__label');
+        const english = root.querySelector('.bilingual-english');
+        const content = root.parentElement;
+        const rootIndex = Array.prototype.indexOf.call(content.children, root);
+        const chineseNodes = Array.from(content.children).slice(rootIndex + 1);
+        const title = document.querySelector('.post-title');
+    const chineseTitle = title ? title.textContent.trim() : '';
+        const readingTime = document.querySelector('.post-meta span:last-of-type');
+        const storageKey = `article-language:${location.pathname}`;
+
+        const applyLanguage = (language, remember = true) => {
+          const showEnglish = language === 'en';
+          english.hidden = !showEnglish;
+          chineseNodes.forEach((node) => { node.hidden = showEnglish; });
+
+          button.setAttribute('aria-pressed', String(showEnglish));
+          button.setAttribute('aria-label', showEnglish ? '切换到中文' : 'Switch to English');
+          button.title = showEnglish ? '切换到中文' : 'Switch to English';
+          label.textContent = showEnglish ? '中文' : 'English';
+          root.dataset.language = showEnglish ? 'en' : 'zh';
+
+          if (title) {
+            title.textContent = showEnglish ? 'Life in Thailand, Updated' : chineseTitle;
+          }
+
+          if (readingTime) {
+            readingTime.textContent = showEnglish ? '{{ $enMinutes }} min' : '{{ $zhMinutes }} min';
+          }
+
+          if (remember) {
+            try { localStorage.setItem(storageKey, showEnglish ? 'en' : 'zh'); } catch (_) {}
+          }
+        };
+
+        button.addEventListener('click', () => {
+          applyLanguage(root.dataset.language === 'en' ? 'zh' : 'en');
+        });
+
+        let savedLanguage = 'zh';
+        try { savedLanguage = localStorage.getItem(storageKey) || 'zh'; } catch (_) {}
+        root.dataset.ready = 'true';
+        applyLanguage(savedLanguage, false);
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
+    })();
+  </script>
+</div>
