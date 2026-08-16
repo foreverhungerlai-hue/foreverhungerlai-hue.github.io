@@ -1,25 +1,19 @@
-<section class="guestbook" id="guestbook" aria-labelledby="guestbook-title"
+<section class="guestbook" id="guestbook" aria-label="留言"
   data-guestbook
   data-repository="foreverhungerlai-hue/foreverhungerlai-hue.github.io"
   data-issue-number="1">
-  <header class="guestbook__header">
-    <div>
-      <p>NOTES FROM PASSERS-BY</p>
-      <h2 id="guestbook-title">经过此地的人</h2>
-      <span>读到这里的话，留下一句话也很好。</span>
-    </div>
+  <div class="guestbook__bar">
     <a class="guestbook__compose" data-guestbook-compose
-      href="https://github.com/foreverhungerlai-hue/foreverhungerlai-hue.github.io/issues"
+      href="https://github.com/foreverhungerlai-hue/foreverhungerlai-hue.github.io/issues/1#new_comment_field"
       target="_blank" rel="noopener noreferrer">
-      写留言 <span aria-hidden="true">↗</span>
+      留言 <span aria-hidden="true">↗</span>
     </a>
-  </header>
+  </div>
 
   <div class="guestbook__status" data-guestbook-status role="status" aria-live="polite">
-    正在翻开留言簿……
+    正在加载留言
   </div>
   <ol class="guestbook__list" data-guestbook-list></ol>
-  <p class="guestbook__note">留言通过 GitHub 公开保存；不会要求或展示邮箱。</p>
 </section>
 
 <script>
@@ -58,7 +52,7 @@
         list.replaceChildren();
 
         if (!comments.length) {
-          setStatus('第一句话留给你。', 'empty');
+          setStatus('', 'empty');
           return;
         }
 

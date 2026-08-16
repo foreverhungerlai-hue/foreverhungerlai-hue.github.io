@@ -10,13 +10,14 @@
     <span class="portal-label">Personal home</span>
 </a>
 {{- else -}}
-{{- if not .IsHome }}
+{{- $isJournalIndex := and (eq .Section "posts") (eq .Kind "section") -}}
+{{- if and (not .IsHome) (not $isJournalIndex) }}
 <a class="technical-return" href="{{ "/" | relURL }}" aria-label="Back home" title="Back home">
     <span class="return-glyph" aria-hidden="true">↗</span>
     <span>Back home</span>
 </a>
 {{- end }}
-{{ if and (not .IsPage) (not .IsHome) }}
+{{ if and (not .IsPage) (not .IsHome) (ne .Section "posts") }}
 <div id="disco-root" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; overflow: hidden; user-select: none;"></div>
 
 <style>

@@ -57,10 +57,8 @@
                 {{- $personalMenu := slice
                     (dict "name" "Home" "url" "/")
                     (dict "name" "Journal" "url" "/posts/")
-                    (dict "name" "Archive" "url" "/archives/")
                     (dict "name" "Tags" "url" "/tags/")
                     (dict "name" "About" "url" "/about/")
-                    (dict "name" "Lab Notes" "url" "/technical/")
                 -}}
                 {{- range $personalMenu }}
                 {{- $itemURL := .url | absURL }}

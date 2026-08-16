@@ -1,0 +1,26 @@
+{{- define "main" }}
+{{- $pages := where .RegularPages "Params.hiddenInHomeList" "!=" true }}
+{{- $pages = $pages.ByDate.Reverse }}
+
+<section class="journal-timeline-page" aria-labelledby="journal-timeline-title">
+  <header class="journal-timeline-page__header">
+    <h1 id="journal-timeline-title">Journal</h1>
+  </header>
+
+  <div class="journal-timeline">
+    {{- range $pages.GroupByDate "2006" }}
+    <section class="journal-timeline__year" aria-labelledby="journal-year-{{ .Key }}">
+      <h2 id="journal-year-{{ .Key }}">{{ .Key }}</h2>
+      <ol>
+        {{- range .Pages }}
+        <li>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{- end }}
+      </ol>
+    </section>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
