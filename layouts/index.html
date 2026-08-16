@@ -1,0 +1,101 @@
+{{- define "main" }}
+{{- $journal := where site.RegularPages "Section" "posts" }}
+{{- $journal = where $journal "Params.hiddenInHomeList" "!=" true }}
+{{- $journal = $journal.ByDate.Reverse }}
+{{- $labNotes := (where site.RegularPages "Section" "technical").ByDate.Reverse }}
+
+<section class="journal-hero" aria-labelledby="journal-home-title">
+  <div class="journal-hero__wash" aria-hidden="true"></div>
+  <div class="journal-hero__content">
+    <p class="journal-hero__eyebrow">PERSONAL JOURNAL · TROPICAL AFTERHOURS</p>
+    <h1 id="journal-home-title">Tataee<span aria-hidden="true">_</span></h1>
+    <p class="journal-hero__line">热带植物的叶子，承接一个又一个黄昏。</p>
+    <nav class="journal-hero__actions" aria-label="Homepage shortcuts">
+      <a href="#recent-notes">最近写下的</a>
+      <button type="button" data-random-journal>随机游走</button>
+      <a href="#guestbook">留下几句话</a>
+    </nav>
+    <div class="journal-random-targets" hidden>
+      {{- range first 16 $journal }}
+      <a href="{{ .RelPermalink }}" data-random-target>{{ .Title }}</a>
+      {{- end }}
+    </div>
+  </div>
+  <a class="journal-hero__scroll" href="#recent-notes" aria-label="Scroll to recent journal entries">
+    <span></span>继续往下
+  </a>
+</section>
+
+<div class="journal-home-panel">
+  <section class="journal-section" id="recent-notes" aria-labelledby="recent-notes-title">
+    <header class="journal-section__header">
+      <div>
+        <p>THE LATEST PAGES</p>
+        <h2 id="recent-notes-title">最近写下的</h2>
+      </div>
+      <a href="{{ "/posts/" | relURL }}">全部日志 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <div class="journal-grid">
+      {{- range first 6 $journal }}
+      {{- $page := . }}
+      {{- $coverURL := "/images/blog-header.jpg" }}
+      {{- with $page.Params.cover.image }}
+        {{- with $page.Resources.GetMatch . }}
+          {{- $processedCover := .Resize "1000x webp q82" }}
+          {{- $coverURL = $processedCover.RelPermalink }}
+        {{- end }}
+      {{- end }}
+      <article class="journal-card" style="--journal-cover: url('{{ $coverURL }}')">
+        <div class="journal-card__veil" aria-hidden="true"></div>
+        <div class="journal-card__body">
+          <div class="journal-card__meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+            {{- with index .Params.tags 0 }}<span># {{ . }}</span>{{- end }}
+          </div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 150 }}{{ end }}</p>
+          <span class="journal-card__read">读下去 <span aria-hidden="true">→</span></span>
+        </div>
+        <a class="journal-card__link" href="{{ .RelPermalink }}" aria-label="阅读《{{ .Title | plainify }}》"></a>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+
+  <section class="lab-shelf" aria-labelledby="lab-shelf-title">
+    <div class="lab-shelf__intro">
+      <p>THE OTHER NOTEBOOK</p>
+      <h2 id="lab-shelf-title">实验台的另一边</h2>
+      <span>方法、数据和那些值得复现的细节。</span>
+    </div>
+    <div class="lab-shelf__links">
+      {{- range first 3 $labNotes }}
+      <a href="{{ .RelPermalink }}">
+        <span>{{ .Date.Format "2006.01" }}</span>
+        <strong>{{ .Title }}</strong>
+        <i aria-hidden="true">↗</i>
+      </a>
+      {{- end }}
+    </div>
+    <a class="lab-shelf__all" href="{{ "/technical/" | relURL }}">打开 Lab Notes</a>
+  </section>
+
+  {{- partial "guestbook.html" . }}
+
+  <p class="journal-home-coda">街道和钠灯。天空，世界。你还活着。</p>
+</div>
+
+<script>
+  (() => {
+    const button = document.querySelector('[data-random-journal]');
+    if (!button) return;
+    button.addEventListener('click', () => {
+      const links = [...document.querySelectorAll('[data-random-target]')];
+      if (!links.length) return;
+      const destination = links[Math.floor(Math.random() * links.length)].href;
+      window.location.assign(destination);
+    });
+  })();
+</script>
+{{- end }}

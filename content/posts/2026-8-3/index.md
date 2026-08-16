@@ -2,6 +2,7 @@
 title: "更新的泰国生活"
 date: 2026-08-03T00:00:00+07:00
 draft: false
+description: "坐在地毯上吹空调，喝酸奶。窗外是叶片巨大的热带植物，又一个黄昏。"
 cover:
   image: cover.jpg
   relative: true

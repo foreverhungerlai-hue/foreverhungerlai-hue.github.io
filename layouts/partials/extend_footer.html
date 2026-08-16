@@ -1,20 +1,22 @@
-{{- $isTechnical := or .IsHome (hasPrefix .RelPermalink "/technical/") -}}
+{{- $isTechnical := hasPrefix .RelPermalink "/technical/" -}}
 {{- $isTechnicalTerm := false -}}
 {{- if eq .Kind "term" -}}
     {{- $technicalTermPages := where .Pages "Params.technicalPage" true -}}
     {{- $isTechnicalTerm = gt (len $technicalTermPages) 0 -}}
 {{- end -}}
 {{- if or $isTechnical $isTechnicalTerm -}}
-<a class="personal-portal" href="{{ "/posts/" | relURL }}" aria-label="Enter the personal journal" title="Enter the personal journal">
+<a class="personal-portal" href="{{ "/" | relURL }}" aria-label="Enter the personal homepage" title="Enter the personal homepage">
     <span class="portal-door" aria-hidden="true"><span class="portal-knob"></span></span>
-    <span class="portal-label">Personal journal</span>
+    <span class="portal-label">Personal home</span>
 </a>
 {{- else -}}
-<a class="technical-return" href="{{ "/" | relURL }}" aria-label="Back to Lab Notes" title="Back to Lab Notes">
+{{- if not .IsHome }}
+<a class="technical-return" href="{{ "/" | relURL }}" aria-label="Back home" title="Back home">
     <span class="return-glyph" aria-hidden="true">↗</span>
-    <span>Back to Lab Notes</span>
+    <span>Back home</span>
 </a>
-{{ if not .IsPage }}
+{{- end }}
+{{ if and (not .IsPage) (not .IsHome) }}
 <div id="disco-root" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; overflow: hidden; user-select: none;"></div>
 
 <style>
@@ -150,11 +152,6 @@
     });
 })();
 </script>
-
-{{ if not .IsPage }}
-    <div id="disco-root" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 50; overflow: hidden; user-select: none;"></div>
-    {{ end }}
-
 
 <div id="glass-player" class="glass-btn" title="Play/Pause BGM">
     <audio id="bgm-audio" loop preload="auto">

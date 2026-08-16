@@ -1,0 +1,126 @@
+<section class="guestbook" id="guestbook" aria-labelledby="guestbook-title"
+  data-guestbook
+  data-repository="foreverhungerlai-hue/foreverhungerlai-hue.github.io"
+  data-issue-number="1">
+  <header class="guestbook__header">
+    <div>
+      <p>NOTES FROM PASSERS-BY</p>
+      <h2 id="guestbook-title">经过此地的人</h2>
+      <span>读到这里的话，留下一句话也很好。</span>
+    </div>
+    <a class="guestbook__compose" data-guestbook-compose
+      href="https://github.com/foreverhungerlai-hue/foreverhungerlai-hue.github.io/issues"
+      target="_blank" rel="noopener noreferrer">
+      写留言 <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <div class="guestbook__status" data-guestbook-status role="status" aria-live="polite">
+    正在翻开留言簿……
+  </div>
+  <ol class="guestbook__list" data-guestbook-list></ol>
+  <p class="guestbook__note">留言通过 GitHub 公开保存；不会要求或展示邮箱。</p>
+</section>
+
+<script>
+  (() => {
+    const roots = document.querySelectorAll('[data-guestbook]:not([data-guestbook-ready])');
+    roots.forEach(async (root) => {
+      root.dataset.guestbookReady = 'true';
+      const repository = root.dataset.repository;
+      const issueNumber = root.dataset.issueNumber;
+      const status = root.querySelector('[data-guestbook-status]');
+      const list = root.querySelector('[data-guestbook-list]');
+      const compose = root.querySelector('[data-guestbook-compose]');
+
+      const setStatus = (message, state = '') => {
+        status.textContent = message;
+        status.dataset.state = state;
+      };
+
+      try {
+        const issueResponse = await fetch(
+          `https://api.github.com/repos/${repository}/issues/${issueNumber}`,
+          { headers: { Accept: 'application/vnd.github+json' } }
+        );
+        if (!issueResponse.ok) throw new Error('issue lookup failed');
+
+        const issue = await issueResponse.json();
+
+        compose.href = `${issue.html_url}#new_comment_field`;
+        const commentsResponse = await fetch(
+          `${issue.comments_url}?per_page=30&sort=created&direction=asc`,
+          { headers: { Accept: 'application/vnd.github+json' } }
+        );
+        if (!commentsResponse.ok) throw new Error('comment lookup failed');
+
+        const comments = await commentsResponse.json();
+        list.replaceChildren();
+
+        if (!comments.length) {
+          setStatus('第一句话留给你。', 'empty');
+          return;
+        }
+
+        const dateFormatter = new Intl.DateTimeFormat('zh-CN', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        });
+
+        comments.forEach((comment) => {
+          const item = document.createElement('li');
+          item.className = 'guestbook-note';
+
+          const avatarLink = document.createElement('a');
+          avatarLink.href = comment.user.html_url;
+          avatarLink.target = '_blank';
+          avatarLink.rel = 'noopener noreferrer';
+          avatarLink.className = 'guestbook-note__avatar';
+
+          const avatar = document.createElement('img');
+          avatar.src = comment.user.avatar_url;
+          avatar.alt = `${comment.user.login} 的头像`;
+          avatar.loading = 'lazy';
+          avatar.width = 48;
+          avatar.height = 48;
+          avatarLink.append(avatar);
+
+          const body = document.createElement('div');
+          body.className = 'guestbook-note__body';
+
+          const byline = document.createElement('div');
+          byline.className = 'guestbook-note__byline';
+
+          const author = document.createElement('a');
+          author.href = comment.user.html_url;
+          author.target = '_blank';
+          author.rel = 'noopener noreferrer';
+          author.textContent = comment.user.login;
+
+          const time = document.createElement('time');
+          time.dateTime = comment.created_at;
+          time.textContent = dateFormatter.format(new Date(comment.created_at));
+
+          const reply = document.createElement('a');
+          reply.href = comment.html_url;
+          reply.target = '_blank';
+          reply.rel = 'noopener noreferrer';
+          reply.textContent = '回复 ↗';
+
+          const text = document.createElement('p');
+          text.textContent = comment.body;
+
+          byline.append(author, time, reply);
+          body.append(byline, text);
+          item.append(avatarLink, body);
+          list.append(item);
+        });
+
+        setStatus(`${comments.length} 条留言`, 'ready');
+      } catch (error) {
+        setStatus('留言暂时没有加载出来，点右上角仍然可以去写。', 'error');
+      }
+    });
+  })();
+</script>

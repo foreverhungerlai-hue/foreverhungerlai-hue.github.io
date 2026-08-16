@@ -15,6 +15,7 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  comments = true
   mainSections = ["technical"]
 [params.assets]
   customCSS = ["css/extended/custom.css"]

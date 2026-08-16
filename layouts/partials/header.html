@@ -1,4 +1,4 @@
-{{- $isTechnical := or .IsHome (hasPrefix .RelPermalink "/technical/") -}}
+{{- $isTechnical := hasPrefix .RelPermalink "/technical/" -}}
 {{- $isTechnicalTerm := false -}}
 {{- if eq .Kind "term" -}}
     {{- $technicalTermPages := where .Pages "Params.technicalPage" true -}}
@@ -10,7 +10,7 @@
     <nav class="nav">
         <div class="logo">
             {{- if $useTechnicalUI }}
-            <a href="{{ "/" | absURL }}" accesskey="h" title="Tataee / Lab Notes (Alt + H)">Tataee / Lab Notes</a>
+            <a href="{{ "/technical/" | absURL }}" accesskey="h" title="Tataee / Lab Notes (Alt + H)">Tataee / Lab Notes</a>
             {{- else }}
             <a href="{{ "/posts/" | absURL }}" accesskey="h" title="Tataee (Alt + H)">Tataee</a>
             {{- end }}
@@ -55,9 +55,12 @@
                 {{- end }}
             {{- else }}
                 {{- $personalMenu := slice
-                    (dict "name" "Blog" "url" "/posts/")
+                    (dict "name" "Home" "url" "/")
+                    (dict "name" "Journal" "url" "/posts/")
+                    (dict "name" "Archive" "url" "/archives/")
                     (dict "name" "Tags" "url" "/tags/")
                     (dict "name" "About" "url" "/about/")
+                    (dict "name" "Lab Notes" "url" "/technical/")
                 -}}
                 {{- range $personalMenu }}
                 {{- $itemURL := .url | absURL }}
